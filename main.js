@@ -4,6 +4,7 @@ const searchRes = document.querySelector(".searchRes");
 const historyContainer = document.querySelector(".search-history");
 const toggleThemeBtn = document.getElementById("toggle-theme");
 const exportBtn = document.getElementById("exportHistory");
+const searchBtn = document.getElementById("searchBtn");
 
 let allRepos = [];
 let visibleCount = 3;
@@ -106,10 +107,18 @@ const getUser = async (user) => {
 };
 
 input.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
+  if (e.key === "Enter" ) {
     const searchVal = e.target.value.trim();
     if (searchVal) getUser(searchVal);
-  }
+}
+
+searchBtn.addEventListener("click", () => {
+      const searchVal = e.target.value.trim();
+      if (searchVal) getUser(searchVal);
+
+  })
+
+  
 });
 
 // ! dark mode
